@@ -38,7 +38,7 @@ namespace VieropeenRij.wpf
             B1.Source = SetImage(imagePathRed);        // Zet Rood in vak B2
         }
 
-<<<<<<< HEAD
+
         private void btnA_Click(object sender, RoutedEventArgs e)
         {
             CurrentTurn = GameManager.CurrentTurnChecker(CurrentTurn);
@@ -75,7 +75,7 @@ namespace VieropeenRij.wpf
         {
 
         }
-=======
+
         private static BitmapImage SetImage(string relativePath)
         {
             BitmapImage bitmapImage = new BitmapImage();
@@ -84,6 +84,6 @@ namespace VieropeenRij.wpf
             bitmapImage.EndInit();
             return bitmapImage;
         } 
->>>>>>> refs/remotes/origin/master
+
     }
 }
