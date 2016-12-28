@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+VieropeenRij.wpf/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+VieropeenRij.wpf/obj/Debug/VieropeenRij.wpf_MarkupCompile.i.lref
+.vs/VieropeenRij/v14/.suo
