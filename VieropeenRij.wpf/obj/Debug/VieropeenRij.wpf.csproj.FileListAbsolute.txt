@@ -1,0 +1,17 @@
+R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe.config
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csprojResolveAssemblyReference.cache
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.g.cs
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\App.g.cs
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.cache
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.lref
+R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe
+R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.pdb
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.baml
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.g.resources
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.Properties.Resources.resources
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csproj.GenerateResource.Cache
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
+R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb
+C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe.config
+C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
+C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb

@@ -1,0 +1,26 @@
+ 
+  --Klasses--
+
+-Rondje = Kleur / Positie / Image
+-Speler = Naam / Kleur
+-GameManager = grid(Multidimensional Arrays)
+
+  --Methods--
+
+-Rondjes = /
+-Speler = /
+-GameManager = CurrentTurn / HorizontalCheck / VerticalCheck / DiagonalCheck / InsertCoin 
+
+
+    --- Taken verdeling ---
+
+
+Matthieu : Naam / Kleur (Speler) ||| Kleur / Positie / Image (Rondje) |||  HorizontalCheck /  DiagonalCheck
+
+
+Hannes : grid(Multidimensional Arrays) |||  HorizontatCheck / DiagonalCheck ||| GUI setup (alle vakken benoemen bv A1, A2, B1 etc.)
+
+
+William : CurrentTurn ||| InsertCoin (Soort van VerticalCheck)  ||| GUI setup (alle vakken benoemen bv A1, A2, B1 etc.) ||| VerticalCheck 
+
+(Voor de Methods gebruik de namen die hier instaan en in de juiste klasse)
