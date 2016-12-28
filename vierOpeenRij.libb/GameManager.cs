@@ -22,7 +22,19 @@ namespace vierOpeenRij.libb
 
         
 
-        bool [,] grid; // de Multidimensional Array
+        int[,] gameGrid = new int[7,7]; // de Multidimensional Array
+        
+       
+        public void ResetGameGrid()
+        {
+            for(int column = 0; column < 7; column++)
+			{
+			    for (int rij = 1; rij < 7; rij++)
+			    {
+                    gameGrid[column, rij] = 0; // Alle hokjes leegmaken
+			    }
+			}
+        }
 
         public int CurrentTurnChecker(int CurrentTurn)
         {
