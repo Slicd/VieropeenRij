@@ -1,24 +1,4 @@
-R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe.config
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csprojResolveAssemblyReference.cache
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.g.cs
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\App.g.cs
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.cache
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.lref
-R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe
-R:\C#\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.pdb
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.baml
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.g.resources
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.Properties.Resources.resources
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csproj.GenerateResource.Cache
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
-R:\C#\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb
-C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe.config
-C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
-C:\Users\Hannes\Documents\GitHub\VieropeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb
-<<<<<<< HEAD
 R:\github\vierOpeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe.config
-R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
-R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb
 R:\github\vierOpeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe
 R:\github\vierOpeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.pdb
 R:\github\vierOpeenRij\VieropeenRij.wpf\bin\Debug\vierOpeenRij.libb.dll
@@ -32,18 +12,5 @@ R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.baml
 R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.g.resources
 R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.Properties.Resources.resources
 R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csproj.GenerateResource.Cache
-=======
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csprojResolveAssemblyReference.cache
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.g.cs
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\App.g.cs
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.cache
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf_MarkupCompile.lref
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.exe
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\bin\Debug\VieropeenRij.wpf.pdb
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\bin\Debug\vierOpeenRij.libb.dll
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\bin\Debug\vierOpeenRij.libb.pdb
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\MainWindow.baml
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.g.resources
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.Properties.Resources.resources
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.csproj.GenerateResource.Cache
->>>>>>> refs/remotes/origin/master
+R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.exe
+R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb

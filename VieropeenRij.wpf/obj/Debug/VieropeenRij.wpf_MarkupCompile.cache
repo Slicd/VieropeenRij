@@ -4,28 +4,16 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\
-=======
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\
->>>>>>> refs/remotes/origin/master
 VieropeenRij.wpf
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 R:\github\vierOpeenRij\VieropeenRij.wpf\App.xaml
 11151548125
 
 5-2017746502
 14-1796544965
-=======
-C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\App.xaml
-11151548125
-
-5-2017746502
-141592793944
->>>>>>> refs/remotes/origin/master
 MainWindow.xaml;
 
 False
