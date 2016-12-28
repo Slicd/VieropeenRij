@@ -31,11 +31,11 @@ namespace VieropeenRij.wpf
             string imagePathYellow = "Images/Geel.png",
                    imagePathRed = "Images/Rood.png";
 
-            A1.Source = GetImage(imagePathYellow);     // Zet Geel in Vak A1
-            B2.Source = GetImage(imagePathRed);        // Zet Rood in vak B2
+            A1.Source = SetImage(imagePathYellow);     // Zet Geel in Vak A1
+            B1.Source = SetImage(imagePathRed);        // Zet Rood in vak B2
         }
 
-        private static BitmapImage GetImage(string relativePath)
+        private static BitmapImage SetImage(string relativePath)
         {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
