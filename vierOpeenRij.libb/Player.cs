@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace vierOpeenRij.libb
 {
-    class Player
+    public class Player
     {
-        string Naam; // Speler 1 (Geel), Speler 2 (Rood)
-        int Kleur; //       ^                   ^
+        public string Name; // Speler 1 (Geel), Speler 2 (Rood)
+        public int Color; //       ^                   ^
     }
 }
