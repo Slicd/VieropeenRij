@@ -31,14 +31,14 @@ namespace VieropeenRij.wpf
             Image Rood = new Image();
             Image Geel = new Image();
 
-           // Rood.Source = new BitmapImage(new Uri("R:///C#/VieropeenRij/Rood.png")); // Dit pad is anders voor elke gebruiker dit moet nog veranderen. (Relative)
-          //  Geel.Source = new BitmapImage(new Uri("R:///C#/VieropeenRij/Geel.png"));
+            string imagePathYellow = "Images/Geel.png",
+                   imagePathRed = "Images/Rood.png";
 
-
-            B2.Source = Rood.Source;        // Zet Rood in vak B2
-            A1.Source = Geel.Source;        // Zet Geel in vak A1
+            A1.Source = SetImage(imagePathYellow);     // Zet Geel in Vak A1
+            B1.Source = SetImage(imagePathRed);        // Zet Rood in vak B2
         }
 
+<<<<<<< HEAD
         private void btnA_Click(object sender, RoutedEventArgs e)
         {
             CurrentTurn = GameManager.CurrentTurnChecker(CurrentTurn);
@@ -75,5 +75,15 @@ namespace VieropeenRij.wpf
         {
 
         }
+=======
+        private static BitmapImage SetImage(string relativePath)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri("pack://siteoforigin:,,,/" + relativePath, UriKind.RelativeOrAbsolute);
+            bitmapImage.EndInit();
+            return bitmapImage;
+        } 
+>>>>>>> refs/remotes/origin/master
     }
 }

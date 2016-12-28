@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 R:\github\vierOpeenRij\vierOpeenRij.libb\bin\Debug\vierOpeenRij.libb.dll
 R:\github\vierOpeenRij\vierOpeenRij.libb\bin\Debug\vierOpeenRij.libb.pdb
 R:\github\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.csprojResolveAssemblyReference.cache
 R:\github\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.dll
 R:\github\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.pdb
+=======
+C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.csprojResolveAssemblyReference.cache
+C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\bin\Debug\vierOpeenRij.libb.dll
+C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\bin\Debug\vierOpeenRij.libb.pdb
+C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.dll
+C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.pdb
+>>>>>>> refs/remotes/origin/master
