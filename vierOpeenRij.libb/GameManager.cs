@@ -6,13 +6,48 @@ using System.Threading.Tasks;
 
 namespace vierOpeenRij.libb
 {
-    class GameManager
+    public class GameManager
     {
+        
+        Player Player1 = new Player
+        {
+            Name = "Speler 1",
+                Color = 1 // geel
+        };
+        Player Player2 = new Player
+        {
+                Name = "Speler 2",
+                Color = 2 // rood
+        };
+
+        
+
         bool [,] grid; // de Multidimensional Array
 
-        public void CurrentTurn() // William
+        public int CurrentTurnChecker(int CurrentTurn)
         {
-            int failure;
+            if (CurrentTurn <= 1)
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+
+        public string CurrentPlayer(int CurrentTurn) 
+        {
+            if(CurrentTurn <= 1)
+            {
+                return Player1.Name;
+            }
+            else
+            {
+                return Player2.Name;
+            }
+            
         }
 
         public void InsertCoin() // William

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using vierOpeenRij.libb;
 namespace VieropeenRij.wpf
 {
     
@@ -21,6 +21,9 @@ namespace VieropeenRij.wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        GameManager GameManager = new GameManager(); // init
+        int CurrentTurn = 1; // begint met speler 1
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +37,43 @@ namespace VieropeenRij.wpf
 
             B2.Source = Rood.Source;        // Zet Rood in vak B2
             A1.Source = Geel.Source;        // Zet Geel in vak A1
+        }
+
+        private void btnA_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentTurn = GameManager.CurrentTurnChecker(CurrentTurn);
+            lblCurrentPlayer.Content =  GameManager.CurrentPlayer(CurrentTurn);
+            
+        }
+
+        private void btnB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnC_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnD_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnE_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnF_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnG_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
