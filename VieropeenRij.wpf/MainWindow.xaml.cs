@@ -28,12 +28,20 @@ namespace VieropeenRij.wpf
             Image Rood = new Image();
             Image Geel = new Image();
 
-           // Rood.Source = new BitmapImage(new Uri("R:///C#/VieropeenRij/Rood.png")); // Dit pad is anders voor elke gebruiker dit moet nog veranderen. (Relative)
-          //  Geel.Source = new BitmapImage(new Uri("R:///C#/VieropeenRij/Geel.png"));
+            string imagePathYellow = "Images/Geel.png",
+                   imagePathRed = "Images/Rood.png";
 
-
-            B2.Source = Rood.Source;        // Zet Rood in vak B2
-            A1.Source = Geel.Source;        // Zet Geel in vak A1
+            A1.Source = GetImage(imagePathYellow);     // Zet Geel in Vak A1
+            B2.Source = GetImage(imagePathRed);        // Zet Rood in vak B2
         }
+
+        private static BitmapImage GetImage(string relativePath)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri("pack://siteoforigin:,,,/" + relativePath, UriKind.RelativeOrAbsolute);
+            bitmapImage.EndInit();
+            return bitmapImage;
+        } 
     }
 }
