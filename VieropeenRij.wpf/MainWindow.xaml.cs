@@ -22,7 +22,9 @@ namespace VieropeenRij.wpf
     public partial class MainWindow : Window
     {
         GameManager GameManager = new GameManager(); // init
-        int CurrentTurn = 1; // begint met speler 1
+        
+        
+        
 
         public MainWindow()
         {
@@ -33,57 +35,35 @@ namespace VieropeenRij.wpf
 
             string imagePathYellow = "Images/Geel.png",
                    imagePathRed = "Images/Rood.png";
-
+            
+            Image image = new Image();
+            
             A1.Source = SetImage(imagePathYellow);     // Zet Geel in Vak A1
             B1.Source = SetImage(imagePathRed);        // Zet Rood in vak B2
+
         }
 
 
-        private void btnA_Click(object sender, RoutedEventArgs e)
+        private void Insert_Click(object sender, RoutedEventArgs e)
         {
-            CurrentTurn = GameManager.CurrentTurnChecker(CurrentTurn);
-            lblCurrentPlayer.Content =  GameManager.CurrentPlayer(CurrentTurn);
-            
+            string buttonString = ((Button)e.OriginalSource).CommandParameter.ToString();
+            int buttonValue = int.Parse(buttonString);
+
+            GameManager.InsertCoin(buttonValue);
+            GameManager.NextTurn();
+
+            lblCurrentPlayer.Content = GameManager.CurrentPlayer();
         }
 
-        private void btnB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnC_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnD_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnE_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnF_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnG_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private static BitmapImage SetImage(string relativePath)
+        public static BitmapImage SetImage(string relativePath)
         {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
             bitmapImage.UriSource = new Uri("pack://siteoforigin:,,,/" + relativePath, UriKind.RelativeOrAbsolute);
             bitmapImage.EndInit();
             return bitmapImage;
-        } 
+        }
+
 
     }
 }
