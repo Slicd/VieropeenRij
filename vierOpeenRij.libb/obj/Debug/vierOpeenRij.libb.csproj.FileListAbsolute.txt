@@ -7,3 +7,4 @@ C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\bin\Debug\vierOp
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.dll
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.pdb
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.csprojResolveAssemblyReference.cache
+R:\github\vierOpeenRij\vierOpeenRij.libb\obj\Debug\vierOpeenRij.libb.csprojResolveAssemblyReference.cache
