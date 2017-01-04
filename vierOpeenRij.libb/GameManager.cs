@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
+
 namespace vierOpeenRij.libb
 {
     public class GameManager // william -> todo : laat de spelers hun eigen naam kiezen.
@@ -79,12 +80,14 @@ namespace vierOpeenRij.libb
 
         public void InsertCoin(int columnPara) // William -> variabele bijhouden met positie van laatst ingeworpen muntje
         {
-            for(int i = 6; i > 1; i--)
+            
+            for (int i = 6; i > 0; i--)
             {
-                if (gameGrid[columnPara, i]==0)
+                if (gameGrid[columnPara, i] == 0)
                 {
                     gameGrid[columnPara, i] = CurrentColor;     //voegt het rondje toe 
-                    
+                    lastCoinColumn = columnPara; // zet de column van het laatste rondje vast.
+                    lastCoinRow = i;            // zet de Row van het laatste rondje vast.
                     return;
                 }
             }
@@ -93,28 +96,161 @@ namespace vierOpeenRij.libb
         }
 
        
-        public void VerticalCheck(/*positie van laatst ingeworpen muntje meegeven*/) //WILLIAM
+        public void VerticalCheck() //WILLIAM
         {
-            //voorgestelde aanpak (probeer gerust iets anders als je iets anders bedenkt)
-
-                //onthou de laatste column waar is geInsert.
-                //gebruik een for loop om door de kolom het kleur te checken
-                //als het de waarde niet nul is, hou het aantal opeenvolgende kleur bij
-                //als het kleur verandert, reset de counter
-                //if counter = 4, victory!
+   
         }
 
-        public void HorizontalCheck(/*zie hierboven*/) // WILLIAM
+        public void HorizontalCheck() // WILLIAM
         {
 
         }
 
-
-        public void DiagonalCheck(/*zie hierboven*/) 
+        public int counter = 1;
+        
+        public int DiagonalCheck() 
         {
+            int Victory = 0;
+            int Column = lastCoinColumn,
+                Row = lastCoinRow; 
 
-        }
+            for (int i = lastCoinColumn; i < 6; i++) // Van beneden naar boven /
+            { // Start loop 1
 
-       
+                Column++;
+                if(Row > 0)
+                {
+                    Row--;
+                }
+
+                if (gameGrid[Column, Row] == CurrentColor)
+                {
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (counter == 4)
+                {
+                    Victory = 1;
+                    return Victory;
+                }          
+            } // End loop 1
+
+            for (int i = lastCoinColumn; i >= 0; i++) // Van boven naar beneden /
+            { // Start loop 2
+
+                if(Column > 0)
+                {
+                    Column--;
+                }
+                
+                Row++;
+                if(Row >= 7)
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+                
+                if (gameGrid[Column, Row] == CurrentColor)
+                {
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (counter == 4)
+                {
+                    Victory = 1;
+                    return Victory;
+                }
+            } // End loop 2
+
+            for (int i = lastCoinColumn; i < 6; i++) // Van beneden naar boven \
+            { // Start loop 3
+
+                Column++;
+                Row++;
+                if (Row >= 7)
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (Row >= 7)
+                {
+                    Row = 6;
+                }
+
+                if (gameGrid[Column, Row] == CurrentColor)
+                {
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (counter == 4)
+                {
+                    Victory = 1;
+                    return Victory;
+                }
+            } // End loop 3
+
+            for (int i = lastCoinColumn; i >= 0; i++) // Van boven naar beneden \
+            { // Start loop 4
+
+                if (Column > 0)
+                {
+                    Column--;
+                }
+                if (Row > 0)
+                {
+                    Row--;
+                }
+
+                if (gameGrid[Column, Row] == CurrentColor)
+                {
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (counter == 4)
+                {
+                    Victory = 1;
+                    return Victory;
+                }
+            } // End loop 4
+
+            return Victory;
+        }       
     }
 }
