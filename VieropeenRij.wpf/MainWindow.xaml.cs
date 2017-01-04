@@ -50,6 +50,14 @@ namespace VieropeenRij.wpf
             int buttonValue = int.Parse(buttonString);
 
             GameManager.InsertCoin(buttonValue);
+
+            int Victory = 0;
+            Victory = GameManager.DiagonalCheck();
+            if(Victory == 1)
+            {
+                MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
+            }
+
             GameManager.NextTurn();
 
             lblCurrentPlayer.Content = GameManager.CurrentPlayer();
