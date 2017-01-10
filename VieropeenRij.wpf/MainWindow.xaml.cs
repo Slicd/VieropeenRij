@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vierOpeenRij.libb;
+
+//using System.ComponentModel;
+
 namespace VieropeenRij.wpf
 {
     
@@ -38,8 +41,8 @@ namespace VieropeenRij.wpf
             
             Image image = new Image();
             
-            A1.Source = SetImage(imagePathYellow);     // Zet Geel in Vak A1
-            B1.Source = SetImage(imagePathRed);        // Zet Rood in vak B2
+            A1.Source = IntToImageSourceConverter.SetImage(imagePathYellow);     // Zet Geel in Vak A1
+            B1.Source = IntToImageSourceConverter.SetImage(imagePathRed);        // Zet Rood in vak B2
 
         }
 
@@ -50,20 +53,17 @@ namespace VieropeenRij.wpf
             int buttonValue = int.Parse(buttonString);
 
             GameManager.InsertCoin(buttonValue);
+
+            int Victory = 0;
+            Victory = GameManager.DiagonalCheck();
+            if(Victory == 1)
+            {
+                MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
+            }
+
             GameManager.NextTurn();
 
             lblCurrentPlayer.Content = GameManager.CurrentPlayer();
         }
-
-        public static BitmapImage SetImage(string relativePath)
-        {
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.UriSource = new Uri("pack://siteoforigin:,,,/" + relativePath, UriKind.RelativeOrAbsolute);
-            bitmapImage.EndInit();
-            return bitmapImage;
-        }
-
-
     }
 }
