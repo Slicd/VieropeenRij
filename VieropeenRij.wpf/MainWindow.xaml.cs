@@ -25,9 +25,6 @@ namespace VieropeenRij.wpf
     public partial class MainWindow : Window
     {
         GameManager GameManager = new GameManager(); // init
-        
-        
-        
 
         public MainWindow()
         {
@@ -36,13 +33,26 @@ namespace VieropeenRij.wpf
             Image Rood = new Image();
             Image Geel = new Image();
 
-            string imagePathYellow = "Images/Geel.png",
-                   imagePathRed = "Images/Rood.png";
+           // string imagePathYellow = "Images/Geel.png",
+           // imagePathRed = "Images/Rood.png";
             
             Image image = new Image();
+
+           // A1.Source = IntToImageSourceConverter.SetImage(imagePathYellow);     // Zet Geel in Vak A1
+           // B1.Source = IntToImageSourceConverter.SetImage(imagePathRed);        // Zet Rood in vak B2
             
-            A1.Source = IntToImageSourceConverter.SetImage(imagePathYellow);     // Zet Geel in Vak A1
-            B1.Source = IntToImageSourceConverter.SetImage(imagePathRed);        // Zet Rood in vak B2
+
+            for (int column = 0; column < 7; column++)
+            {
+                for (int row = 1; row < 7; row++)
+                {
+                    Image hokje = new Image();
+                    hokje.Source = IntToImageSourceConverter.SetImage(IntToImageSourceConverter.imagePathEmpty);
+                    this.XAMLGrid.Children.Add(hokje);
+                    Grid.SetRow(hokje, row);
+                    Grid.SetColumn(hokje, column);
+                }
+            }
 
         }
 
@@ -53,6 +63,7 @@ namespace VieropeenRij.wpf
             int buttonValue = int.Parse(buttonString);
 
             GameManager.InsertCoin(buttonValue);
+            RefreshUIGrid();
 
             int Victory = 0;
             Victory = GameManager.DiagonalCheck();
@@ -60,10 +71,30 @@ namespace VieropeenRij.wpf
             {
                 MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
             }
-
+            
             GameManager.NextTurn();
 
             lblCurrentPlayer.Content = GameManager.CurrentPlayer();
+        }
+
+
+        private void RefreshUIGrid()
+        {
+            int[,] uiGrid = GameManager.GetGameGrid();
+            XAMLGrid.Children.Clear();
+
+            for (int column = 0; column < 7; column++)
+            {
+                for (int row = 1; row < 7; row++)
+                {
+                    Image hokje = new Image();
+                    hokje.Source = IntToImageSourceConverter.Convert(uiGrid[column,row]);
+                    this.XAMLGrid.Children.Add(hokje);
+                    Grid.SetRow(hokje, row);
+                    Grid.SetColumn(hokje, column);
+                }
+            }
+
         }
     }
 }

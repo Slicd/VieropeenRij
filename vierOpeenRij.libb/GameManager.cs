@@ -4,6 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+
+using System.Windows.Media;
+
+using System.Windows.Shapes;
 
 
 namespace vierOpeenRij.libb
@@ -78,9 +85,9 @@ namespace vierOpeenRij.libb
             
         }
 
-        public void InsertCoin(int columnPara) // William -> variabele bijhouden met positie van laatst ingeworpen muntje
+        public void InsertCoin(int columnPara) 
         {
-            
+
             for (int i = 6; i > 0; i--)
             {
                 if (gameGrid[columnPara, i] == 0)
@@ -91,10 +98,7 @@ namespace vierOpeenRij.libb
                     return;
                 }
             }
-
-             
         }
-
        
         public void VerticalCheck() //WILLIAM
         {
@@ -252,5 +256,10 @@ namespace vierOpeenRij.libb
 
             return Victory;
         }       
+
+        public int[,] GetGameGrid()
+        {
+            return gameGrid;
+        }
     }
 }

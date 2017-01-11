@@ -5,18 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Windows.Markup;
+
 
 namespace vierOpeenRij.libb
 {
-    public class IntToImageSourceConverter : IValueConverter
+    public class IntToImageSourceConverter
     {
-        string imagePathYellow = "Images/Geel.png",
+      public static string imagePathYellow = "Images/Geel.png",
                   imagePathRed = "Images/Rood.png",
                 imagePathEmpty = "Images/Empty.png";
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+       public static ImageSource Convert(int value)
         {
-            switch ((int)value)
+            switch (value)
             {
                 case 1:
                     return SetImage(imagePathYellow);
@@ -28,12 +31,12 @@ namespace vierOpeenRij.libb
             }
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            return 1;
-        }
+        //public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        //{
+        //    return 1;
+        //}
 
-        public static BitmapImage SetImage(string relativePath)
+        public static BitmapImage SetImage(string relativePath)   //nog private zetten
         {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
