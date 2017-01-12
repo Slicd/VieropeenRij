@@ -65,9 +65,9 @@ namespace VieropeenRij.wpf
             GameManager.InsertCoin(buttonValue);
             RefreshUIGrid();
 
-            int Victory = 0;
-            Victory = GameManager.DiagonalCheck();
-            if(Victory == 1)
+            
+            
+            if(GameManager.DiagonalCheck() == 1 || GameManager.HorizontalCheck() == 1)
             {
                 MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
             }

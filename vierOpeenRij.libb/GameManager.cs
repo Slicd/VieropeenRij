@@ -105,15 +105,44 @@ namespace vierOpeenRij.libb
    
         }
 
-        public void HorizontalCheck() // WILLIAM
-        {
+        public int HorizontalCheck()
 
+        {
+            int counter = 0;
+            int Column = lastCoinColumn,
+                Row = lastCoinRow;
+            int Victory = 0;
+           
+
+            for (int column = 0; column <= 6; column++)
+            {
+
+                if(gameGrid[column, Row] == CurrentColor){
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 0;
+                    
+                }
+
+                if (counter == 4)
+                {
+                    Victory = 1;
+                    return Victory;
+                }
+
+
+            }
+
+            return Victory;
         }
 
-        public int counter = 1;
         
         public int DiagonalCheck() 
         {
+            int counter = 1;
             int Victory = 0;
             int Column = lastCoinColumn,
                 Row = lastCoinRow; 
