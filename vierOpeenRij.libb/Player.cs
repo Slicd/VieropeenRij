@@ -9,7 +9,7 @@ namespace vierOpeenRij.libb
     public class Player
     {
         public string Name; // Speler 1 (Geel), Speler 2 (Rood)
-        public int Color; //       ^                   ^
+        public int Color; 
 
     }
 }

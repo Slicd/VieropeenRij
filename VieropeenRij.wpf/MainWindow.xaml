@@ -59,6 +59,7 @@
         <Grid Height="33" Margin="0,-38,-88,0" VerticalAlignment="Top">
             <Label x:Name="lblCurrentPlayer" Content="Speler 1 (Geel)" Margin="301,0,216,-6" FontSize="22"></Label>
             <Label Content="Beurt :" Margin="231,0,371,-6" FontSize="22"/>
+            <Button x:Name="btnRestart" Content="Restart" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnRestart_Click"/>
 
         </Grid>
     </Grid>

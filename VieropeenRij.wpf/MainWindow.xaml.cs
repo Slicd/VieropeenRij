@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,8 @@ namespace VieropeenRij.wpf
             Speler1 = Player1;
             Speler2 = Player2;
 
+            lblCurrentPlayer.Content = Speler1.Name + " (Geel)"; 
+
             for (int column = 0; column < 7; column++)
             {
                 for (int row = 1; row < 7; row++)
@@ -59,9 +62,10 @@ namespace VieropeenRij.wpf
             RefreshUIGrid();
 
             
-            if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true)
+            if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true || GameManager.VerticalCheck())
             {
-                MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1,Speler2));
+                MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1, Speler2) + Environment.NewLine + "Restarting Game");
+                RestartGame();
             }
             
             GameManager.NextTurn();
@@ -85,8 +89,18 @@ namespace VieropeenRij.wpf
                     Grid.SetRow(hokje, row);
                     Grid.SetColumn(hokje, column);
                 }
-            }
-            
+            }           
+        }
+
+        private void RestartGame()
+        {
+            Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
+
+        private void btnRestart_Click(object sender, RoutedEventArgs e)
+        {
+            RestartGame();
         }
     }
 }

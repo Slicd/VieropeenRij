@@ -32,3 +32,5 @@ C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\Vierope
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\VieropeenRij.wpf.pdb
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\PlayerNames.g.cs
 C:\Users\Hannes\Documents\GitHub\vierOpeenRij\VieropeenRij.wpf\obj\Debug\PlayerNames.baml
+R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\PlayerNames.g.cs
+R:\github\vierOpeenRij\VieropeenRij.wpf\obj\Debug\PlayerNames.baml

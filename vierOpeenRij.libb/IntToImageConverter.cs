@@ -30,13 +30,8 @@ namespace vierOpeenRij.libb
                     return SetImage(imagePathEmpty);
             }
         }
-
-        //public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        //{
-        //    return 1;
-        //}
-
-        public static BitmapImage SetImage(string relativePath)   //nog private zetten
+        
+        public static BitmapImage SetImage(string relativePath)   
         {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();

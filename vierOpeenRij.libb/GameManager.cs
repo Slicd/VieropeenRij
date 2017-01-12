@@ -99,10 +99,37 @@ namespace vierOpeenRij.libb
                 }
             }
         }
-       
-        public bool VerticalCheck() //WILLIAM
+
+        public bool VerticalCheck() 
         {
+            int column = lastCoinColumn;
+
+            int counter = 0;
+
+
+            for (int row = 1; row <= 6; row++)
+            {
+
+                if (gameGrid[column, row] == CurrentColor)
+                {
+                    counter++;
+
+                }
+                else
+                {
+                    counter = 0;
+                }
+
+
+                if (counter == 4)
+                {
+
+                    return true;
+                }
+
+            }
             return false;
+
         }
 
         public bool HorizontalCheck()
@@ -138,7 +165,7 @@ namespace vierOpeenRij.libb
             int Column = lastCoinColumn,
                 Row = lastCoinRow; 
 
-            for (int i = Column; i <= 6; i++) // Van beneden naar boven /                   //i++ is goed
+            for (int i = Column; i <= 6; i++) // Van beneden naar boven /                 
             { // Start loop 1
 
                 if (Column < 6)
@@ -152,11 +179,11 @@ namespace vierOpeenRij.libb
                     Row = lastCoinRow;
                     break;
                 }
-                if (Row > 1)    // als de rij 0 is, dan schuift hij hier niet meer op en trackt hij enkel de coin rechts van lastcoin, moet hier ook geen else break komen?     en moet het niet row > 1 zijn?
+                if (Row > 1)    
                 {
                     Row--;
                 }
-                else ////////////////////////
+                else 
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -182,14 +209,14 @@ namespace vierOpeenRij.libb
                 }          
             } // End loop 1
 
-            for (int i = Column; i >= 0; i--) // Van boven naar beneden /                //hier ga je naar links, is het niet beter om met i-- te werken? geeft die ++ geen infinite loop? want i blijft sowieso >=0
+            for (int i = Column; i >= 0; i--) // Van boven naar beneden /                
             { // Start loop 2
 
-                if (Column > 0)    // als de kolom 0 is, dan schuift hij hier niet meer op en trackt hij enkel de coin eronder, moet hier ook geen break komen?
+                if (Column > 0)    
                 {
                     Column--;
                 }
-                else  //////////////////////
+                else  
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -201,7 +228,7 @@ namespace vierOpeenRij.libb
                 {
                     Row++;
                 }
-                else // verandert van >=7 voor leesbaarheid
+                else 
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -234,7 +261,7 @@ namespace vierOpeenRij.libb
                 {
                     Column--;
                 }
-                else    //////////////////
+                else    
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -245,7 +272,7 @@ namespace vierOpeenRij.libb
                 {
                     Row--;
                 }
-                else /////////////////
+                else 
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -331,11 +358,6 @@ namespace vierOpeenRij.libb
         }
 
 
-        //private void ResetCounter()
-        //{
-        //    counter = 1;
-        //    Column = lastCoinColumn;
-        //    Row = lastCoinRow;
-        //}
+        
     }
 }
