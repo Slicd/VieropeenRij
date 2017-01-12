@@ -10,5 +10,6 @@ namespace vierOpeenRij.libb
     {
         public string Name; // Speler 1 (Geel), Speler 2 (Rood)
         public int Color; //       ^                   ^
+
     }
 }

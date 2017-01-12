@@ -28,19 +28,7 @@ namespace VieropeenRij.wpf
 
         public MainWindow()
         {
-            InitializeComponent();
-
-            Image Rood = new Image();
-            Image Geel = new Image();
-
-           // string imagePathYellow = "Images/Geel.png",
-           // imagePathRed = "Images/Rood.png";
-            
-            Image image = new Image();
-
-           // A1.Source = IntToImageSourceConverter.SetImage(imagePathYellow);     // Zet Geel in Vak A1
-           // B1.Source = IntToImageSourceConverter.SetImage(imagePathRed);        // Zet Rood in vak B2
-            
+            InitializeComponent();    
 
             for (int column = 0; column < 7; column++)
             {
@@ -53,7 +41,6 @@ namespace VieropeenRij.wpf
                     Grid.SetColumn(hokje, column);
                 }
             }
-
         }
 
 
@@ -66,8 +53,7 @@ namespace VieropeenRij.wpf
             RefreshUIGrid();
 
             
-            
-            if(GameManager.DiagonalCheck() == 1 || GameManager.HorizontalCheck() == 1)
+            if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true)
             {
                 MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
             }
@@ -94,7 +80,7 @@ namespace VieropeenRij.wpf
                     Grid.SetColumn(hokje, column);
                 }
             }
-
+            lblShizzle.Content = this.Width.ToString() + "    " + this.Height.ToString();
         }
     }
 }

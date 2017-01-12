@@ -39,9 +39,9 @@ namespace vierOpeenRij.libb
         int lastCoinColumn = 0,
             lastCoinRow = 0;
 
-        
 
-        public int CurrentColor = 1; // begint met speler 1
+
+        public int CurrentColor = (int)color.yellow; // begint met speler 1
 
                
 
@@ -61,20 +61,20 @@ namespace vierOpeenRij.libb
 
         public void NextTurn()
         {
-            if (CurrentColor <= 1)
+            if (CurrentColor <= (int)color.yellow)
             {
-               CurrentColor = 2;
+                CurrentColor = (int)color.red;
             }
             else
             {
-                CurrentColor = 1;
+                CurrentColor = (int)color.yellow;
             }
         }
 
 
         public string CurrentPlayer() //  William -> todo : font kleur overeen laten komen met het rondje.
         {
-            if(CurrentColor <= 1)
+            if (CurrentColor <= (int)color.yellow)
             {
                 return Player1.Name;
             }
@@ -100,20 +100,17 @@ namespace vierOpeenRij.libb
             }
         }
        
-        public void VerticalCheck() //WILLIAM
+        public bool VerticalCheck() //WILLIAM
         {
-   
+            return false;
         }
 
-        public int HorizontalCheck()
-
+        public bool HorizontalCheck()
         {
             int counter = 0;
             int Column = lastCoinColumn,
                 Row = lastCoinRow;
-            int Victory = 0;
-           
-
+                                     
             for (int column = 0; column <= 6; column++)
             {
 
@@ -124,43 +121,53 @@ namespace vierOpeenRij.libb
                 else
                 {
                     counter = 0;
-                    
                 }
 
                 if (counter == 4)
                 {
-                    Victory = 1;
-                    return Victory;
+                    return true;
                 }
-
-
             }
-
-            return Victory;
+            return false;
         }
 
-        
-        public int DiagonalCheck() 
+        public bool DiagonalCheck() 
         {
             int counter = 1;
-            int Victory = 0;
+           
             int Column = lastCoinColumn,
                 Row = lastCoinRow; 
 
-            for (int i = lastCoinColumn; i < 6; i++) // Van beneden naar boven /
+            for (int i = Column; i <= 6; i++) // Van beneden naar boven /                   //i++ is goed
             { // Start loop 1
 
-                Column++;
-                if(Row > 0)
+                if (Column < 6)
+                {
+                    Column++;
+                }
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+                if (Row > 1)    // als de rij 0 is, dan schuift hij hier niet meer op en trackt hij enkel de coin rechts van lastcoin, moet hier ook geen else break komen?     en moet het niet row > 1 zijn?
                 {
                     Row--;
                 }
+                else ////////////////////////
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
 
                 if (gameGrid[Column, Row] == CurrentColor)
                 {
                     counter++;
                 }
-
                 else
                 {
                     counter = 1;
@@ -171,21 +178,30 @@ namespace vierOpeenRij.libb
 
                 if (counter == 4)
                 {
-                    Victory = 1;
-                    return Victory;
+                    return true;
                 }          
             } // End loop 1
 
-            for (int i = lastCoinColumn; i >= 0; i++) // Van boven naar beneden /
+            for (int i = Column; i >= 0; i--) // Van boven naar beneden /                //hier ga je naar links, is het niet beter om met i-- te werken? geeft die ++ geen infinite loop? want i blijft sowieso >=0
             { // Start loop 2
 
-                if(Column > 0)
+                if (Column > 0)    // als de kolom 0 is, dan schuift hij hier niet meer op en trackt hij enkel de coin eronder, moet hier ook geen break komen?
                 {
                     Column--;
                 }
-                
-                Row++;
-                if(Row >= 7)
+                else  //////////////////////
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (Row < 6)
+                {
+                    Row++;
+                }
+                else // verandert van >=7 voor leesbaarheid
                 {
                     counter = 1;
                     Column = lastCoinColumn;
@@ -197,7 +213,6 @@ namespace vierOpeenRij.libb
                 {
                     counter++;
                 }
-
                 else
                 {
                     counter = 1;
@@ -208,60 +223,35 @@ namespace vierOpeenRij.libb
 
                 if (counter == 4)
                 {
-                    Victory = 1;
-                    return Victory;
+                    return true;
                 }
             } // End loop 2
 
-            for (int i = lastCoinColumn; i < 6; i++) // Van beneden naar boven \
+            for (int i = Column; i >= 0; i--) // Van beneden naar boven \
             { // Start loop 3
-
-                Column++;
-                Row++;
-                if (Row >= 7)
-                {
-                    counter = 1;
-                    Column = lastCoinColumn;
-                    Row = lastCoinRow;
-                    break;
-                }
-
-                if (Row >= 7)
-                {
-                    Row = 6;
-                }
-
-                if (gameGrid[Column, Row] == CurrentColor)
-                {
-                    counter++;
-                }
-
-                else
-                {
-                    counter = 1;
-                    Column = lastCoinColumn;
-                    Row = lastCoinRow;
-                    break;
-                }
-
-                if (counter == 4)
-                {
-                    Victory = 1;
-                    return Victory;
-                }
-            } // End loop 3
-
-            for (int i = lastCoinColumn; i >= 0; i++) // Van boven naar beneden \
-            { // Start loop 4
 
                 if (Column > 0)
                 {
                     Column--;
                 }
-                if (Row > 0)
+                else    //////////////////
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+                if (Row > 1)
                 {
                     Row--;
                 }
+                else /////////////////
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                } 
 
                 if (gameGrid[Column, Row] == CurrentColor)
                 {
@@ -278,17 +268,74 @@ namespace vierOpeenRij.libb
 
                 if (counter == 4)
                 {
-                    Victory = 1;
-                    return Victory;
+                    return true;
                 }
-            } // End loop 4
+            } // End loop 3
 
-            return Victory;
+            for (int i = Column; i <= 6; i++) // Van boven naar beneden \
+            { // Start loop 4
+
+                if (Column<6)
+                {
+                    Column++;
+                }
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (Row<6)
+                {
+                    Row++;
+                }
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (gameGrid[Column, Row] == CurrentColor)
+                {
+                    counter++;
+                }
+                else
+                {
+                    counter = 1;
+                    Column = lastCoinColumn;
+                    Row = lastCoinRow;
+                    break;
+                }
+
+                if (counter == 4)
+                {
+                    return true;
+                }
+            } 
+
+            return false;
         }       
 
+        /// <summary>
+        /// Geeft de gamegrid data door aan de UI.
+        /// Te gebruiken in MainWindow
+        /// </summary>
+        /// <returns></returns>
         public int[,] GetGameGrid()
         {
             return gameGrid;
         }
+
+
+        //private void ResetCounter()
+        //{
+        //    counter = 1;
+        //    Column = lastCoinColumn;
+        //    Row = lastCoinRow;
+        //}
     }
 }
