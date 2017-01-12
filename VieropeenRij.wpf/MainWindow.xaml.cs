@@ -62,7 +62,7 @@ namespace VieropeenRij.wpf
             RefreshUIGrid();
 
             
-            if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true || GameManager.VerticalCheck())
+            if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true || GameManager.VerticalCheck() == true)
             {
                 MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1, Speler2) + Environment.NewLine + "Restarting Game");
                 RestartGame();
