@@ -26,9 +26,15 @@ namespace VieropeenRij.wpf
     {
         GameManager GameManager = new GameManager(); // init
 
-        public MainWindow()
+        Player Speler1 = new Player();
+        Player Speler2 = new Player();
+
+        public MainWindow(Player Player1, Player Player2)
         {
-            InitializeComponent();    
+            InitializeComponent();
+
+            Speler1 = Player1;
+            Speler2 = Player2;
 
             for (int column = 0; column < 7; column++)
             {
@@ -55,12 +61,12 @@ namespace VieropeenRij.wpf
             
             if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true)
             {
-                MessageBox.Show("Good Game " + GameManager.CurrentPlayer());
+                MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1,Speler2));
             }
             
             GameManager.NextTurn();
 
-            lblCurrentPlayer.Content = GameManager.CurrentPlayer();
+            lblCurrentPlayer.Content = GameManager.CurrentPlayer(Speler1, Speler2);
         }
 
 
@@ -80,7 +86,7 @@ namespace VieropeenRij.wpf
                     Grid.SetColumn(hokje, column);
                 }
             }
-            lblShizzle.Content = this.Width.ToString() + "    " + this.Height.ToString();
+            
         }
     }
 }

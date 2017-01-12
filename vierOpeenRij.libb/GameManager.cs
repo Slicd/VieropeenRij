@@ -72,7 +72,7 @@ namespace vierOpeenRij.libb
         }
 
 
-        public string CurrentPlayer() //  William -> todo : font kleur overeen laten komen met het rondje.
+        public string CurrentPlayer(Player Player1, Player Player2) //  William -> todo : font kleur overeen laten komen met het rondje.
         {
             if (CurrentColor <= (int)color.yellow)
             {
