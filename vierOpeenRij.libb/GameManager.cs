@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace vierOpeenRij.libb
 {
-    public class GameManager // william -> todo : laat de spelers hun eigen naam kiezen.
+    public class GameManager 
     {
         
         Player Player1 = new Player
@@ -29,7 +29,7 @@ namespace vierOpeenRij.libb
                 Color = 2 
         };
 
-        enum color : int
+        public enum color : int
         {
             empty = 0,
             yellow = 1,
@@ -50,9 +50,9 @@ namespace vierOpeenRij.libb
        
         public void CreateEmptyGameGrid()
         {
-            for(int column = 1; column < 7; column++)
+            for(int column = 0; column < 7; column++)
 			{
-			    for (int rij = 0; rij < 7; rij++)
+			    for (int rij = 1; rij < 7; rij++)
 			    {
                     gameGrid[column, rij] = 0; // Alle hokjes leegmaken   
 			    }
@@ -72,9 +72,9 @@ namespace vierOpeenRij.libb
         }
 
 
-        public string CurrentPlayer(Player Player1, Player Player2) //  William -> todo : font kleur overeen laten komen met het rondje.
+        public string CurrentPlayer(Player Player1, Player Player2) 
         {
-            if (CurrentColor <= (int)color.yellow)
+            if (CurrentColor <= 1)
             {
                 return Player1.Name;
             }

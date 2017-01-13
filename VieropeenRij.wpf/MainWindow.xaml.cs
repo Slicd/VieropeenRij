@@ -27,8 +27,8 @@ namespace VieropeenRij.wpf
     {
         GameManager GameManager = new GameManager(); // init
 
-        Player Speler1 = new Player();
-        Player Speler2 = new Player();
+       public Player Speler1 = new Player();
+       public Player Speler2 = new Player();
 
         public MainWindow(Player Player1, Player Player2)
         {
@@ -61,21 +61,33 @@ namespace VieropeenRij.wpf
             
             if(GameManager.InsertCoin(buttonValue) == true)
             {
-                MessageBox.Show("Kies een andere column " + GameManager.CurrentPlayer(Speler1, Speler2));
+                MessageBox.Show("Kies een andere kolom, " + GameManager.CurrentPlayer(Speler1,Speler2));
                 return;
             }
+
             RefreshUIGrid();
 
-            
             if(GameManager.DiagonalCheck() == true || GameManager.HorizontalCheck() == true || GameManager.VerticalCheck() == true)
             {
-                MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1, Speler2) + Environment.NewLine + "Restarting Game");
-                RestartGame();
+                MessageBoxResult result = MessageBox.Show("Good Game " + GameManager.CurrentPlayer(Speler1, Speler2) + Environment.NewLine + "Wil je nog een spel met dezelfde spelers?", "Wie is de beste? " + GameManager.CurrentPlayer(Speler1, Speler2) + " is de beste!", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        GameManager.CreateEmptyGameGrid();
+                        RefreshUIGrid();
+                        break;
+                    case MessageBoxResult.No:
+                        RestartGame();
+                        break;
+                    
+                }
+               
+                
             }
             
             if(GameManager.Tzitvol() == true)
             {
-                MessageBox.Show("Spel zit vol, geen winner" + Environment.NewLine + "Restarting Game");
+                MessageBox.Show("Spel zit vol, geen winnaar" + Environment.NewLine + "Restarting Game");
                 RestartGame();
             }
 
@@ -83,20 +95,15 @@ namespace VieropeenRij.wpf
 
             lblCurrentPlayer.Content = GameManager.CurrentPlayer(Speler1, Speler2);
 
-            if (GameManager.CurrentColor == 1)
+            if (GameManager.CurrentColor == (int)GameManager.color.yellow)
             {
-
                 lblCurrentPlayer.Foreground = System.Windows.Media.Brushes.Yellow;
                 lblTurn.Foreground = System.Windows.Media.Brushes.Yellow;
-
             }
-
-            if (GameManager.CurrentColor == 2)
+            else
             {
-
                 lblCurrentPlayer.Foreground = System.Windows.Media.Brushes.Red;
                 lblTurn.Foreground = System.Windows.Media.Brushes.Red;
-
             }
         }
 
@@ -125,6 +132,7 @@ namespace VieropeenRij.wpf
             Application.Current.Shutdown();
         }
 
+        
         private void btnRestart_Click(object sender, RoutedEventArgs e)
         {
             RestartGame();
