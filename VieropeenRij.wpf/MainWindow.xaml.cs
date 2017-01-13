@@ -37,7 +37,7 @@ namespace VieropeenRij.wpf
             Speler1 = Player1;
             Speler2 = Player2;
 
-            lblCurrentPlayer.Content = Speler1.Name + " (Geel)"; 
+            lblCurrentPlayer.Content = Speler1.Name; 
 
             for (int column = 0; column < 7; column++)
             {
@@ -58,7 +58,12 @@ namespace VieropeenRij.wpf
             string buttonString = ((Button)e.OriginalSource).CommandParameter.ToString();
             int buttonValue = int.Parse(buttonString);
 
-            GameManager.InsertCoin(buttonValue);
+            
+            if(GameManager.InsertCoin(buttonValue) == true)
+            {
+                MessageBox.Show("Kies een andere column " + GameManager.CurrentPlayer(Speler1, Speler2));
+                return;
+            }
             RefreshUIGrid();
 
             
@@ -68,9 +73,31 @@ namespace VieropeenRij.wpf
                 RestartGame();
             }
             
+            if(GameManager.Tzitvol() == true)
+            {
+                MessageBox.Show("Spel zit vol, geen winner" + Environment.NewLine + "Restarting Game");
+                RestartGame();
+            }
+
             GameManager.NextTurn();
 
             lblCurrentPlayer.Content = GameManager.CurrentPlayer(Speler1, Speler2);
+
+            if (GameManager.CurrentColor == 1)
+            {
+
+                lblCurrentPlayer.Foreground = System.Windows.Media.Brushes.Yellow;
+                lblTurn.Foreground = System.Windows.Media.Brushes.Yellow;
+
+            }
+
+            if (GameManager.CurrentColor == 2)
+            {
+
+                lblCurrentPlayer.Foreground = System.Windows.Media.Brushes.Red;
+                lblTurn.Foreground = System.Windows.Media.Brushes.Red;
+
+            }
         }
 
 

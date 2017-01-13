@@ -84,20 +84,50 @@ namespace vierOpeenRij.libb
             }
             
         }
-
-        public void InsertCoin(int columnPara) 
+        
+        public bool InsertCoin(int columnPara) 
         {
 
             for (int i = 6; i > 0; i--)
             {
-                if (gameGrid[columnPara, i] == 0)
+                    if (gameGrid[columnPara, 1] > 0)
+                {
+                    return true;
+                }
+                    if (gameGrid[columnPara, i] == 0)
                 {
                     gameGrid[columnPara, i] = CurrentColor;     //voegt het rondje toe 
                     lastCoinColumn = columnPara; // zet de column van het laatste rondje vast.
                     lastCoinRow = i;            // zet de Row van het laatste rondje vast.
-                    return;
+                    return false;
+                }                                
+            }
+            return false;
+        }
+
+        public bool Tzitvol()
+        {
+            int counter = 0;
+            
+            for (int column = 0; column <= 6; column++)
+            {
+
+                if (gameGrid[column, 1] > 0)
+                {
+                    counter++;
+                }
+
+                else
+                {
+                    counter = 0;
+                }
+
+                if (counter == 7)
+                {
+                    return true;
                 }
             }
+            return false;
         }
 
         public bool VerticalCheck() 

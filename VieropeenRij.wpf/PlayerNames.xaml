@@ -16,7 +16,12 @@
         <TextBox x:Name="txtbx_player1" Height="23" Margin="96,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="txtbx_player2" Height="23" Margin="96,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" HorizontalContentAlignment="Center"/>
         <Button x:Name="btn_play" Content="Start Spel!" HorizontalAlignment="Left" Margin="290,199,0,0" VerticalAlignment="Top" Width="108" Height="27" Click="btn_play_Click"/>
-        <Image x:Name="splash_png" Grid.ColumnSpan="1" Margin="0,0,1,149" Source="images\splash.png" Stretch="None" MaxHeight="95" MaxWidth="438"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="453">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="splash.png" Stretch="None"/>
+            </Image.OpacityMask>
+        </Image>
+        <Image x:Name="splash_png" Margin="0,0,0,148" Source="splash.png" Stretch="None"/>
 
 
     </Grid>
